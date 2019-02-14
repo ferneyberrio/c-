@@ -1,1 +1,5 @@
-C++ es un lenguaje de programación de alto nivel, que es la base de los sistemas operativos, software licenciado y libre del mundo informático actual. Es curioso que pocas personas sean reconocidas por su contribución a la informática, sin embargo, uno de los más olvidados es Bjarne Stroustrup creador del lenguaje en el que se programaron aplicaciones como Photoshop, After Effects, Chrome, VLC, etc. Y sistemas operativos como Windows.
+Para Windows, sin duda : DevCpp: Dev-C++
+
+Dale una probada, un editor lean, mean y gcc enabled así que lo que hagas lo puedes compilar a otros OS si quieres (mientras te mantengas en el standard)
+
+También para a estos tiempos y si tienes maquina con GBs de RAM sobrantes, como han ejemplificado, puedes usar Visual Studio Code - Code Editing. Redefined
