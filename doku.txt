@@ -1,0 +1,8 @@
+acontinuación se hace una descripción general de los pasos para crear un repositorio en github:
+1). luego de haber creado la cuenta, seguios los pasos de la guia y creamos el repositori.
+2). A continuación editamos el contenido para practicar esto y guardar los cambios.
+3). Posterior a esto se Creamos nuevas ramas para tener diferentes areas de trabajo, y en uno de estos se creo un nuevo archivo en el 
+    cual se copio una secuencia arrojada producto de su compilación de un programa ya existente, esto se realizo en una pagina 
+    destinada para ello.
+4). El objetivo principal fue aprender a manipular las herramientas basicas como crear archivo, editar y compartirlos,
+    al igual que también tener un primer acercamiento con la ejecución de programas en la consola de programación
