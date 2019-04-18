@@ -3,18 +3,19 @@
     *  DOCENTE: JUAN CAMILO CORREA CHICA                     *
     *  INSTITUTO TECNOLÓGICO METROPOLITANO                   *
     *  FECHA MÁXIMA DE ENTREGA: ABRIL 16/2019 - 11:59AM      */
-    
-    /*** REALIZADA POR : FERNEY ANTONIO BERRIO ZULETA.  1035912365 ***/
+
+/********* REALIZADO POR: Ferney Antonio Berrio Zuleta. 1035912365**********/
 
     #include<iostream>
     #include<string>
+
     using namespace std;
 
         // elementos de la matriz
-            int magic_square[8][8] = {{64,2,3,61,60,6,7,57},{9,55,54,12,13,51,50,16},{17,47,46,20,21,43,42,24},{40,26,27,37,36,30,31,33},{32,34,35,29,28,38,39,25},{41,23,22,44,45,19,18,48},{49,15,14,52,53,11,10,56},{8,58,59,5,4,62,63,1}};
-            int tam_cuadro = 8;
-            int Const_magica = 260;             // variables globales resultado de todas las sumas
-            int paridad =1;                     // variable global indica si es cuadro mágico
+             int magic_square[8][8] = {{64,2,3,61,60,6,7,57},{9,55,54,12,13,51,50,16},{17,47,46,20,21,43,42,24},{40,26,27,37,36,30,31,33},{32,34,35,29,28,38,39,25},{41,23,22,44,45,19,18,48},{49,15,14,52,53,11,10,56},{8,58,59,5,4,62,63,1}};
+             int tam_cuadro = 8;
+             int Const_magica = 260;             // variables globales resultado de todas las sumas
+             int paridad =1;                     // variable global indica si es cuadro mágico
 
    // estructura calendario
              struct Calendario{
@@ -31,7 +32,7 @@
              int numpar (int Npar, int Div);
              int potencia ( int base, int exponente);                        // declaración Función potencia
              int serieCuadrados ( int N);                                    // declaración serie de cuadrados
-  void printHelloMsg(string mensaje = " !No se ha ingresado el mensaje!" , int veces= 1);         // declaración por defecto
+  void printHelloMsg(string mensaje = " !No se ha ingresado el mensaje!" , int veces= 0);         // declaración por defecto
 
 
         /******************* FUNCIÓN PRINCIPAL ***********************************/
@@ -91,17 +92,17 @@
 
  /********************* 1.  CUADRO MÁGICO*********************/
 
-             int checkMagicArray (int magic_square [8][8]) {
-             int suma_fila =0 , suma_colum =0, suma_diagonalA =0, suma_diagonalB=0 ;     // declaracion variables
+          int checkMagicArray (int magic_square [8][8]) {
+              int suma_fila =0 , suma_colum =0, suma_diagonalA =0, suma_diagonalB=0 ;     // declaracion variables
 
        // verificación si es cuadro mágico
 
-            for(int i =0 ; i < tam_cuadro ; i++) {
+              for(int i =0 ; i < tam_cuadro ; i++) {
                 suma_diagonalA +=  magic_square[i][i];                          // suma diagonal IZQ
                 suma_diagonalB +=  magic_square[i][(tam_cuadro - 1) - i];       // suma diagonal DER
                 suma_fila = 0 , suma_colum = 0;                                              // reinicia suma de filas
                                                                                 // reinicia suma de columnas
-             for(int j = 0; j< tam_cuadro ; j++){
+              for(int j = 0; j< tam_cuadro ; j++){
                  suma_fila +=  magic_square[i][j];                              // suma filas
                  suma_colum +=  magic_square[j][i];  }                          // suma columnas
                  verifica_suma ( suma_fila);                                    //invoca funcion que verifica si es cte magica
@@ -111,41 +112,43 @@
 
  /****************** funcion para verificar si coincide con la cte mágica *****/
 
-            int verifica_suma ( int suma_cte)  {
-            if(  suma_cte != Const_magica) 	{    paridad =0;                     // no es cuadro mágico
-            return paridad;}                                                     // retorna este valor
-            return paridad;       }                                              // retorna este valor
+              int verifica_suma ( int suma_cte)  {
+              if(  suma_cte != Const_magica) 	{    paridad =0;                  // no es cuadro mágico
+              return paridad;}                                                     // retorna este valor
+              return paridad;       }                                              // retorna este valor
 
   /********************* 2. CALENDARIO *********************/
 
 // función para verificar si un número es par o impar
 
-            int numpar (int Npar, int Div){
-            if (Npar % Div == 0)                                                // si el modulo es cero
-            return 1;                                                           // número es par
-            else   return 0;               }                                    // número es impar
+              int numpar (int Npar, int Div){
+              if (Npar % Div == 0)                                                // si el modulo es cero
+              return 1;                                                           // número es par
+              else   return 0;               }                                    // número es impar
 
    /*******************3. MENSAJES****************************/
 
-            void printHelloMsg(string mensaje , int veces){
-             // if(veces == 0 ) cout <<  mensaje  << endl ;
-            if( veces >= 0 ){                                                     //si es numero positivo
-            for (int i =0 ; i < veces ; i++ ){
-            cout << mensaje << endl ;    }                                        // ciclo para imprimir el mensaje
-            if (veces < 0)                                                        // si es numero negativo
-            cout <<  "  :-(  !Terrrmina la fiesta !!!  :-(  " << endl ; }         // mensaje de despedida
+          void printHelloMsg(string mensaje , int veces){
+              int tamanio;
+              tamanio = mensaje.size() ;
+              if(tamanio == 32 ) cout <<  mensaje  << endl ;
+              if( veces > 0 ){                                                     //si es numero positivo
+              for (int i =0 ; i < veces ; i++ ){
+              cout << mensaje << endl ;    }                                        // ciclo para imprimir el mensaje
+              if (veces < 0)                                                        // si es numero negativo
+              cout <<  "  :-(  !Terrrmina la fiesta !!!  :-(  " << endl ; }         // mensaje de despedida
                                                            }
 /****************** funcion para calcular potencia de un número *****/
 
-            int checkDate (Calendario p )  {  int bisiesto;
-            if(p.dia <1 || p.dia > 31 || p.mes < 1 || p.mes > 12 ||p.anio < 0 || p.anio >127)  return 0;   // verifica que dia o mes sea correcto
+              int checkDate (Calendario p )  {  int bisiesto;
+              if(p.dia <1 || p.dia > 31 || p.mes < 1 || p.mes > 12 ||p.anio < 0 || p.anio >127)  return 0;   // verifica que dia o mes sea correcto
 
      // para verificar si el año es bisiesto
 
-             if(numpar( p.anio, 4) == 0 )    bisiesto = 0;                                                 // si NO es divisible por 4
-             else if(numpar( p.anio, 4) == 1 && numpar( p.anio, 100) == 1 && numpar( p.anio, 400) == 0  )
-             bisiesto = 0;                                                                                 // no es año bisiesto
-             else   bisiesto = 1;                                                                          // es año bisiesto
+              if(numpar( p.anio, 4) == 0 )    bisiesto = 0;                                                 // si NO es divisible por 4
+              else if(numpar( p.anio, 4) == 1 && numpar( p.anio, 100) == 1 && numpar( p.anio, 400) == 0  )
+              bisiesto = 0;                                                                                 // no es año bisiesto
+              else   bisiesto = 1;                                                                          // es año bisiesto
 
        /******************************************/
 
@@ -171,7 +174,7 @@
 
     /****************** funcion para calcular la suma de los cuadrados *****/
 
-                int serieCuadrados ( int N_cuadrado){
+            int serieCuadrados ( int N_cuadrado){
                 int sumaN = 0;                                                                   // la inicializamos en 0
                 int N2;
                 // caso base
@@ -180,4 +183,3 @@
                 N2 = potencia( N_cuadrado , 2);                                                  // retorna el cuadrado del número "N"
                 sumaN = N2 +  serieCuadrados (N_cuadrado - 1);  }                                // se llama a si misma
                 return sumaN;  }                                                                 // retorna el valor de la suma
-
